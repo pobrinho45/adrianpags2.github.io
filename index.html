@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>blog</title>
+        <style>
+            header {
+                background-color: #124C8A;
+                color: #FFFFFF;
+                text-align: center;
+                max-width: 800px;
+                margin: 0 auto;
+                border: 2px solid red;
+                padding: 16px;
+            }
+            main {
+                background-color: #FFFFFF;
+                color: #124C8A;
+                text-align: center;
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 10px;
+            }
+            main img {
+                display: block;
+                width: 100%;
+                max-width: 420px;
+                height: auto;
+                margin: 0 auto 16px;
+            }
+            article {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                margin-bottom: 24px;
+            }
+             img{
+                width: 80px;
+                height: 80px;
+             }
+             .artigo-autor {
+                font-weight: bold;
+             }
+
+            
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>meu blog</h1>
+            <p>venha me conhecer melhor!</p>
+        </header>
+        <main>
+            <article>
+                <img src="image-blog.jpg" alt="Ilustração de um blog com elementos que representam criatividade e ideias.">
+                <div>
+                    <h2>meu primeiro post</h2>
+                    <p class="artigo-autor">por: Adrian Luis</p>
+                    <p>boas vindas ao meu primeiro blog</p>
+                    <!-- Cada botão tem uma reação e um contador próprio. -->
+                    <button>❤️ <span>0</span></button>
+                    <button>👍 <span>0</span></button>
+                    <button>😂 <span>0</span></button>
+                    <button>🎉 <span>0</span></button>
+                    <button>🔥 <span>0</span></button>
+                </div>
+            </article>
+            <article>
+                <img src="image-blog.jpg" alt="Ilustração de um blog com elementos que representam criatividade e ideias.">
+                <div>
+                    <h2>aprendendo a criar páginas web</h2>
+                    <p>HTML organiza o conteúdo, CSS define o visual e JavaScript adiciona interatividade. Cada etapa abre novas possibilidades para criar na web.</p>
+                    <p class="artigo-autor">por: Adrian Luis</p>
+                    <button>❤️ <span>0</span></button>
+                    <button>👍 <span>0</span></button>
+                    <button>😂 <span>0</span></button>
+                    <button>🎉 <span>0</span></button>
+                    <button>🔥 <span>0</span></button>
+                </div>
+            </article>
+        </main>
+    <script>
+        // Seleciona todos os botões de reação da página.
+        const botoes = document.querySelectorAll('button');
+
+        // Registra um evento de clique e um contador independente para cada botão.
+        botoes.forEach(function(botao) {
+            let curtiu = false;
+
+            botao.addEventListener('click', botaoClicado);
+
+            function botaoClicado() {
+                console.log('fui clicado');
+                const texto = botao.querySelector('span');
+
+                if (curtiu === false) {
+                    texto.textContent++;
+                    curtiu = true;
+                } else {
+                    texto.textContent--;
+                    curtiu = false;
+                }
+            }
+        });
+    </script>
+    </body>
+</html>
+
